@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Game/Levels/Level1.tres" type="TileSet" id=1]
+[ext_resource path="res://Game/Box.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/SecureZone.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Game/Levels/Level3.cs" type="Script" id=4]
+[ext_resource path="res://Game/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Game/Coin.tscn" type="PackedScene" id=6]
+
+[node name="Level4" type="TileMap"]
+z_index = 1
+tile_set = ExtResource( 1 )
+collision_layer = 2
+format = 1
+tile_data = PoolIntArray( 65538, 2, 1, 65539, 2, 1, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 65543, 2, 0, 65544, 2, 1, 65545, 2, 1, 65546, 2, 1, 65547, 2, 1, 65548, 2, 1, 65549, 2, 1, 131074, 2, 1, 131075, 2, 1, 131076, 2, 0, 131077, 0, 2, 131078, 0, 2, 131079, 2, 0, 131080, 2, 0, 131081, 2, 0, 131082, 2, 0, 131083, 2, 1, 131084, 2, 1, 131085, 2, 1, 196610, 2, 1, 196611, 2, 1, 196612, 2, 0, 196613, 0, 2, 196614, 0, 2, 196615, 0, 2, 196616, 0, 2, 196617, 0, 2, 196618, 2, 0, 196619, 2, 1, 196620, 2, 1, 196621, 2, 1, 262146, 2, 1, 262147, 2, 1, 262148, 2, 0, 262149, 0, 2, 262150, 0, 2, 262151, 0, 2, 262152, 0, 2, 262153, 0, 2, 262154, 2, 0, 262155, 2, 1, 262156, 2, 1, 262157, 2, 1, 327682, 2, 1, 327683, 2, 1, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 0, 2, 327688, 2, 0, 327689, 2, 0, 327690, 2, 0, 327691, 2, 1, 327692, 2, 1, 327693, 2, 1, 393218, 2, 1, 393219, 2, 1, 393220, 2, 0, 393221, 0, 2, 393222, 0, 2, 393223, 0, 2, 393224, 0, 2, 393225, 0, 2, 393226, 2, 0, 393227, 2, 0, 393228, 2, 1, 393229, 2, 1, 458754, 2, 1, 458755, 2, 1, 458756, 2, 0, 458757, 0, 2, 458758, 0, 2, 458759, 0, 2, 458760, 0, 2, 458761, 0, 2, 458762, 0, 2, 458763, 2, 0, 458764, 2, 1, 458765, 2, 1, 524290, 2, 1, 524291, 2, 1, 524292, 2, 0, 524293, 2, 0, 524294, 2, 0, 524295, 2, 0, 524296, 0, 2, 524297, 0, 2, 524298, 0, 2, 524299, 2, 0, 524300, 2, 1, 524301, 2, 1, 589826, 2, 1, 589827, 2, 1, 589828, 2, 1, 589829, 2, 1, 589830, 2, 1, 589831, 2, 0, 589832, 2, 0, 589833, 2, 0, 589834, 2, 0, 589835, 2, 0, 589836, 2, 1, 589837, 2, 1, 655362, 2, 1, 655363, 2, 1, 655364, 2, 1, 655365, 2, 1, 655366, 2, 1, 655367, 2, 1, 655368, 2, 1, 655369, 2, 1, 655370, 2, 1, 655371, 2, 1, 655372, 2, 1, 655373, 2, 1 )
+script = ExtResource( 4 )
+
+[node name="SecureZone" parent="." instance=ExtResource( 3 )]
+position = Vector2( 416, 480 )
+
+[node name="AnimatedSprite" parent="SecureZone" index="0"]
+animation = "2"
+
+[node name="SecureZone2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 480, 480 )
+
+[node name="AnimatedSprite" parent="SecureZone2" index="0"]
+animation = "2"
+
+[node name="SecureZone3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 544, 480 )
+
+[node name="AnimatedSprite" parent="SecureZone3" index="0"]
+animation = "2"
+
+[node name="Box" parent="." instance=ExtResource( 2 )]
+position = Vector2( 416, 416 )
+
+[node name="AnimatedSprite" parent="Box" index="1"]
+animation = "2"
+
+[node name="Box2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 480, 416 )
+
+[node name="AnimatedSprite" parent="Box2" index="1"]
+animation = "2"
+
+[node name="Box3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 608, 480 )
+
+[node name="AnimatedSprite" parent="Box3" index="1"]
+position = Vector2( -64, -64 )
+animation = "2"
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 672, 544 )
+
+[node name="Coin" parent="." instance=ExtResource( 6 )]
+position = Vector2( 416, 224 )
+
+[node name="Coin2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 608, 544 )
+
+[connection signal="boxLeft" from="Box" to="." method="BoxLeft"]
+[connection signal="boxSecure" from="Box" to="." method="BoxSecure"]
+[connection signal="boxLeft" from="Box2" to="." method="BoxLeft"]
+[connection signal="boxSecure" from="Box2" to="." method="BoxSecure"]
+[connection signal="boxLeft" from="Box3" to="." method="BoxLeft"]
+[connection signal="boxSecure" from="Box3" to="." method="BoxSecure"]
+
+[editable path="SecureZone"]
+[editable path="SecureZone2"]
+[editable path="SecureZone3"]
+[editable path="Box"]
+[editable path="Box2"]
+[editable path="Box3"]
