@@ -46,10 +46,9 @@ position = Vector2( 480, 416 )
 animation = "2"
 
 [node name="Box3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 608, 480 )
+position = Vector2( 544, 416 )
 
 [node name="AnimatedSprite" parent="Box3" index="1"]
-position = Vector2( -64, -64 )
 animation = "2"
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
